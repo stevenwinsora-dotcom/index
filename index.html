@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultasOnline | Calcula el Consumo de Aire Acondicionado en Colombia</title>
+    
+    <meta name="description" content="¿Cuánto pagarás de luz? Usa nuestra herramienta gratuita en ConsultasOnline para estimar el costo de tu factura de energía según el uso de aire acondicionado en Colombia.">
+    <meta name="keywords" content="calculadora aire acondicionado, consumo energía colombia, costo factura luz, ahorro energía, Daniel de Jesus Aroca Arias">
+    <meta name="author" content="Daniel de Jesus Aroca Arias">
+    <link rel="canonical" href="index.html">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "ConsultasOnline - Calculadora de Energía",
+      "url": "index.html",
+      "abstract": "Generador de consultas para estimar el costo de factura eléctrica por uso de aire acondicionado en Colombia.",
+      "author": {
+        "@type": "Person",
+        "name": "DANIEL DE JESUS AROCA ARIAS"
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #00a8e8;
+            --accent: #ffcc00;
+            --dark: #1a1a1a;
+            --light: #f4f7f6;
+            --white: #ffffff;
+            --text: #333333;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); background-color: var(--light); }
+
+        /* Navegación */
+        header { background: var(--white); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky: top; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
+        nav a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: var(--white); padding: 80px 5%; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+        .cta-button { background: var(--accent); color: var(--dark); padding: 18px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; display: inline-block; transition: transform 0.3s ease; border: none; cursor: pointer; }
+        .cta-button:hover { transform: scale(1.05); }
+
+        /* Sección Calculadora */
+        .container { max-width: 1100px; margin: -50px auto 60px; padding: 0 20px; }
+        .calc-card { background: var(--white); padding: 40px; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .grid-calc { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .input-group { display: flex; flex-direction: column; }
+        .input-group label { font-weight: 600; margin-bottom: 8px; font-size: 0.9rem; }
+        .input-group select, .input-group input { padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; }
+        .result-area { background: #e7f3ff; padding: 20px; border-radius: 10px; text-align: center; margin-top: 20px; display: none; }
+        .result-area h3 { color: var(--primary); font-size: 1.5rem; }
+
+        /* Beneficios */
+        .section { padding: 60px 5%; text-align: center; }
+        .section-title { font-size: 2rem; margin-bottom: 40px; color: var(--primary); }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .benefit-item { padding: 30px; background: var(--white); border-radius: 10px; transition: 0.3s; }
+        .benefit-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .benefit-item i { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; display: block; }
+
+        /* Contacto */
+        .contact-section { background: #ffffff; padding: 60px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
+        .info-box h2 { margin-bottom: 20px; color: var(--primary); }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        form input, form textarea { padding: 12px; border: 1px solid #ddd; border-radius: 5px; }
+        form button { background: var(--primary); color: white; padding: 15px; border: none; border-radius: 5px; font-weight: 700; cursor: pointer; }
+
+        /* Footer */
+        footer { background: var(--dark); color: #aaa; padding: 40px 5%; font-size: 0.85rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 30px; }
+        .footer-grid h4 { color: var(--white); margin-bottom: 15px; }
+        .footer-grid a { color: #aaa; text-decoration: none; display: block; margin-bottom: 10px; }
+        .footer-grid a:hover { color: var(--white); }
+        .legal-notice { text-align: center; padding-top: 20px; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            header { flex-direction: column; text-align: center; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="index.html" class="logo">ConsultasOnline</a>
+    <nav>
+        <a href="#calculadora">Calculadora</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>¿En cuánto llegará tu factura de luz este mes?</h1>
+    <p>Utiliza nuestro generador de consultas inteligente para estimar el gasto de energía de tu aire acondicionado en cualquier región de Colombia.</p>
+    <a href="#calculadora" class="cta-button">Calcular mi factura estimada ahora</a>
+</section>
+
+<div class="container" id="calculadora">
+    <div class="calc-card">
+        <h2 style="margin-bottom: 25px; text-align: center;">Simulador de Consumo Energético</h2>
+        <div class="grid-calc">
+            <div class="input-group">
+                <label>Capacidad del Aire (BTU)</label>
+                <select id="btu">
+                    <option value="1.0">9,000 BTU (Pequeño)</option>
+                    <option value="1.3">12,000 BTU (Estándar)</option>
+                    <option value="1.8">18,000 BTU (Grande)</option>
+                    <option value="2.5">24,000 BTU (Industrial)</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Horas de uso al día</label>
+                <input type="number" id="horas" placeholder="Ej: 8" min="1" max="24">
+            </div>
+            <div class="input-group">
+                <label>Días al mes</label>
+                <input type="number" id="dias" value="30" min="1" max="31">
+            </div>
+            <div class="input-group">
+                <label>Estrato socioeconómico</label>
+                <select id="estrato">
+                    <option value="600">Estrato 1 y 2 (Subsidiado)</option>
+                    <option value="750">Estrato 3 y 4 (Promedio)</option>
+                    <option value="900">Estrato 5 y 6 (Contribuyente)</option>
+                </select>
+            </div>
+        </div>
+        <button class="cta-button" style="width: 100%;" onclick="calcular()">Generar consulta de consumo</button>
+        
+        <div id="resultado" class="result-area">
+            <p>Estimación mensual para tu factura:</p>
+            <h3 id="valor-final">$0.00 COP</h3>
+            <small>*Este valor es una aproximación basada en tarifas promedio de Air-e y Afinia.</small>
+        </div>
+    </div>
+</div>
+
+<section class="section" id="beneficios">
+    <h2 class="section-title">¿Por qué usar ConsultasOnline?</h2>
+    <div class="benefits-grid">
+        <div class="benefit-item">
+            <span style="font-size: 3rem;">📊</span>
+            <h3>Precisión Regional</h3>
+            <p>Datos actualizados según los costos por kWh vigentes en departamentos como Magdalena, Atlántico y Bolívar.</p>
+        </div>
+        <div class="benefit-item">
+            <span style="font-size: 3rem;">💡</span>
+            <h3>Control Total</h3>
+            <p>Evita sorpresas en tu recibo de luz ajustando tus hábitos de uso antes de que llegue el cobro.</p>
+        </div>
+        <div class="benefit-item">
+            <span style="font-size: 3rem;">🚫</span>
+            <h3>Sin Registro</h3>
+            <p>Consulta gratuita y anónima. No necesitas crear cuentas para obtener tu estimación de inmediato.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact-section" id="contacto">
+    <div class="info-box">
+        <h2>Transparencia y Contacto</h2>
+        <p>En <strong>ConsultasOnline</strong>, creemos en la honestidad informativa. Nuestra herramienta es educativa y busca ayudar a los hogares colombianos a gestionar su economía.</p>
+        <br>
+        <p><strong>Responsable:</strong> DANIEL DE JESUS AROCA ARIAS</p>
+        <p><strong>Dirección:</strong> Cra. 5 #6-61, El Difícil, Magdalena, Colombia</p>
+        <p><strong>Teléfono:</strong> 3012554856</p>
+        <p><strong>Horario:</strong> Lunes a Domingo - 8:00am a 5:00pm</p>
+    </div>
+    <div class="form-box">
+        <h3>¿Dudas sobre tu consumo?</h3>
+        <form action="#">
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <textarea rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+            <button type="button">Enviar Mensaje</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-grid">
+        <div>
+            <h4>ConsultasOnline</h4>
+            <p>Herramienta educativa para el ahorro energético en Colombia.</p>
+        </div>
+        <div>
+            <h4>Enlaces Legales</h4>
+            <a href="politica-de-privacidad.html">Política de Privacidad</a>
+            <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+        </div>
+        <div>
+            <h4>Contacto Oficial</h4>
+            <p>stevenwinsora@googlemail.com</p>
+            <p>Magdalena, 475010</p>
+        </div>
+    </div>
+    <div class="legal-notice">
+        <p>&copy; 2026 ConsultasOnline - Operado por DANIEL DE JESUS AROCA ARIAS. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    function calcular() {
+        const btu = document.getElementById('btu').value;
+        const horas = document.getElementById('horas').value;
+        const dias = document.getElementById('dias').value;
+        const tarifa = document.getElementById('estrato').value;
+
+        if(!horas || horas <= 0) {
+            alert("Por favor ingresa las horas de uso.");
+            return;
+        }
+
+        // Cálculo aproximado: (BTU factor * kWh promedio * horas * dias * tarifa)
+        const consumoKwh = (btu * 1.2) * horas * dias;
+        const costoTotal = consumoKwh * tarifa;
+
+        const formatter = new Intl.NumberFormat('es-CO', {
+            style: 'currency',
+            currency: 'COP',
+            minimumFractionDigits: 0
+        });
+
+        document.getElementById('valor-final').innerText = formatter.format(costoTotal);
+        document.getElementById('resultado').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
