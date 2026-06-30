@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ConsultasOnline | Calcula el Consumo de Aire Acondicionado en Colombia</title>
+    <title>CalculadoraEnergia | Calcula el Consumo de Aire Acondicionado en Colombia</title>
     
-    <meta name="description" content="¿Cuánto pagarás de luz? Usa nuestra herramienta gratuita en ConsultasOnline para estimar el costo de tu factura de energía según el uso de aire acondicionado en Colombia.">
-    <meta name="keywords" content="calculadora aire acondicionado, consumo energía colombia, costo factura luz, ahorro energía, Daniel de Jesus Aroca Arias">
-    <meta name="author" content="Daniel de Jesus Aroca Arias">
+    <meta name="description" content="¿Cuánto pagarás de luz? Usa nuestra herramienta informativa y gratuita para estimar el costo de tu factura de energía según el uso de aire acondicionado en Colombia.">
+    <meta name="keywords" content="calculadora aire acondicionado, consumo energía colombia, costo factura luz, ahorro energía">
+    <meta name="author" content="Santiago Urzola Buenavides">
     <link rel="canonical" href="index.html">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "ConsultasOnline - Calculadora de Energía",
+      "name": "CalculadoraEnergia - Simulador de Consumo",
       "url": "index.html",
-      "abstract": "Generador de consultas para estimar el costo de factura eléctrica por uso de aire acondicionado en Colombia.",
+      "abstract": "Herramienta web gratuita para estimar el costo de factura eléctrica por uso de aire acondicionado.",
+      "applicationCategory": "Utility",
       "author": {
         "@type": "Person",
-        "name": "DANIEL DE JESUS AROCA ARIAS"
+        "name": "Santiago Urzola Buenavides"
       }
     }
     </script>
@@ -39,7 +40,7 @@
         body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--text); background-color: var(--light); }
 
         /* Navegación */
-        header { background: var(--white); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky: top; z-index: 1000; }
+        header { background: var(--white); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
         nav a { margin-left: 20px; text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; }
         nav a:hover { color: var(--primary); }
@@ -95,7 +96,7 @@
 <body>
 
 <header>
-    <a href="index.html" class="logo">ConsultasOnline</a>
+    <a href="index.html" class="logo">CalculadoraEnergia</a>
     <nav>
         <a href="#calculadora">Calculadora</a>
         <a href="#beneficios">Beneficios</a>
@@ -105,7 +106,7 @@
 
 <section class="hero">
     <h1>¿En cuánto llegará tu factura de luz este mes?</h1>
-    <p>Utiliza nuestro generador de consultas inteligente para estimar el gasto de energía de tu aire acondicionado en cualquier región de Colombia.</p>
+    <p>Utiliza nuestro generador de consultas interactivo y 100% gratuito para estimar el gasto de energía de tu aire acondicionado en Colombia.</p>
     <a href="#calculadora" class="cta-button">Calcular mi factura estimada ahora</a>
 </section>
 
@@ -144,28 +145,28 @@
         <div id="resultado" class="result-area">
             <p>Estimación mensual para tu factura:</p>
             <h3 id="valor-final">$0.00 COP</h3>
-            <small>*Este valor es una aproximación basada en tarifas promedio de Air-e y Afinia.</small>
+            <small>*Este valor es una estimación informativa. No representamos a ninguna entidad prestadora de servicios de energía.</small>
         </div>
     </div>
 </div>
 
 <section class="section" id="beneficios">
-    <h2 class="section-title">¿Por qué usar ConsultasOnline?</h2>
+    <h2 class="section-title">Acerca de nuestra herramienta gratuita</h2>
     <div class="benefits-grid">
         <div class="benefit-item">
             <span style="font-size: 3rem;">📊</span>
-            <h3>Precisión Regional</h3>
-            <p>Datos actualizados según los costos por kWh vigentes en departamentos como Magdalena, Atlántico y Bolívar.</p>
+            <h3>Totalmente Informativa</h3>
+            <p>CalculadoraEnergia es un proyecto web independiente diseñado para ayudar a los usuarios a proyectar sus gastos.</p>
         </div>
         <div class="benefit-item">
             <span style="font-size: 3rem;">💡</span>
-            <h3>Control Total</h3>
-            <p>Evita sorpresas en tu recibo de luz ajustando tus hábitos de uso antes de que llegue el cobro.</p>
+            <h3>Uso Libre</h3>
+            <p>No cobramos por el uso de esta calculadora ni recolectamos información financiera de nuestros visitantes.</p>
         </div>
         <div class="benefit-item">
             <span style="font-size: 3rem;">🚫</span>
             <h3>Sin Registro</h3>
-            <p>Consulta gratuita y anónima. No necesitas crear cuentas para obtener tu estimación de inmediato.</p>
+            <p>Consulta anónima. No necesitas crear cuentas para obtener tu estimación de inmediato.</p>
         </div>
     </div>
 </section>
@@ -173,15 +174,15 @@
 <section class="contact-section" id="contacto">
     <div class="info-box">
         <h2>Transparencia y Contacto</h2>
-        <p>En <strong>ConsultasOnline</strong>, creemos en la honestidad informativa. Nuestra herramienta es educativa y busca ayudar a los hogares colombianos a gestionar su economía.</p>
+        <p>Somos un sitio web informativo independiente operado de forma particular. Nuestra herramienta busca ayudar a los hogares a calcular proyecciones de consumo.</p>
         <br>
-        <p><strong>Responsable:</strong> DANIEL DE JESUS AROCA ARIAS</p>
-        <p><strong>Dirección:</strong> Cra. 5 #6-61, El Difícil, Magdalena, Colombia</p>
-        <p><strong>Teléfono:</strong> 3012554856</p>
-        <p><strong>Horario:</strong> Lunes a Domingo - 8:00am a 5:00pm</p>
+        <p><strong>Administrador Web:</strong> Santiago Urzola Buenavides</p>
+        <p><strong>Ubicación:</strong> Cali, Valle del Cauca, Colombia</p>
+        <p><strong>Correo Electrónico:</strong> stevenwinsora@googlemail.com</p>
+        <p><strong>Horario de atención:</strong> Lunes a Viernes - 8:00am a 5:00pm</p>
     </div>
     <div class="form-box">
-        <h3>¿Dudas sobre tu consumo?</h3>
+        <h3>¿Tienes dudas sobre la web?</h3>
         <form action="#">
             <input type="text" placeholder="Tu nombre" required>
             <input type="email" placeholder="Correo electrónico" required>
@@ -194,22 +195,22 @@
 <footer>
     <div class="footer-grid">
         <div>
-            <h4>ConsultasOnline</h4>
-            <p>Herramienta educativa para el ahorro energético en Colombia.</p>
+            <h4>CalculadoraEnergia</h4>
+            <p>Plataforma web de utilidad gratuita.</p>
         </div>
         <div>
             <h4>Enlaces Legales</h4>
-            <a href="politica-de-privacidad.html">Política de Privacidad</a>
-            <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos y Condiciones</a>
         </div>
         <div>
-            <h4>Contacto Oficial</h4>
+            <h4>Contacto</h4>
             <p>stevenwinsora@googlemail.com</p>
-            <p>Magdalena, 475010</p>
+            <p>Cali, Colombia</p>
         </div>
     </div>
     <div class="legal-notice">
-        <p>&copy; 2026 ConsultasOnline - Operado por DANIEL DE JESUS AROCA ARIAS. Todos los derechos reservados.</p>
+        <p>&copy; 2026 CalculadoraEnergia - Operado por Santiago Urzola Buenavides. Todos los derechos reservados.</p>
     </div>
 </footer>
 
@@ -225,7 +226,6 @@
             return;
         }
 
-        // Cálculo aproximado: (BTU factor * kWh promedio * horas * dias * tarifa)
         const consumoKwh = (btu * 1.2) * horas * dias;
         const costoTotal = consumoKwh * tarifa;
 
